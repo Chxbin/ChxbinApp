@@ -3,10 +3,14 @@ package com.example.chxbinapp.View;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.chxbinapp.Controller.MainController;
 import com.example.chxbinapp.Model.AllSport;
@@ -40,6 +44,25 @@ public class MainActivity extends Activity {
                     }
                 }
         );
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_stats:
+                        Toast.makeText(MainActivity.this, "Stats", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_home:
+                        Toast.makeText(MainActivity.this, "Yeah", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_about:
+                        Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            }
+        });
 
         controller = new MainController(this);
         controller.onStart();
