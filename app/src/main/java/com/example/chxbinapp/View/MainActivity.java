@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
         ListContentFragAbout fragAbout = new ListContentFragAbout();
         fragAbout.setArguments(data);
 
+        adapter.addFragment(fragStats,"Tips");
+        viewPager.setAdapter(adapter);
         adapter.addFragment(fragHome,"list");
         viewPager.setAdapter(adapter);
-        /*adapter.addFragment(fragStats,"Stats");
-        viewPager.setAdapter(adapter);*/
         adapter.addFragment(fragAbout,"About");
         viewPager.setAdapter(adapter);
 
