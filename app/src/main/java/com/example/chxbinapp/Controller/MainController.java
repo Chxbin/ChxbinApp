@@ -57,7 +57,7 @@ public class MainController {
                                        Response<RestSports> response) {
                     RestSports restPlayer = response.body();
                     List<AllSport> listPlayer = restPlayer.getsports();
-                    activity.showList(listPlayer);
+//                    activity.showList(listPlayer);
 
                     Gson gson  = new Gson();
                     String json = gson.toJson(listPlayer);
