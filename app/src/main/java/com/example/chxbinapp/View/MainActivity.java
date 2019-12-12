@@ -66,24 +66,6 @@ public class MainActivity extends AppCompatActivity {
         controller.onStart();
 
 
-       /* final List<AllSport> input = new ArrayList<>();
-
-        recyclerView.setAdapter(mAdapter);
-        ItemTouchHelper.SimpleCallback simpleItemTouchCallback =
-                new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-                    @Override
-                    public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder
-                            target) {
-                        return false;
-                    }
-                    @Override
-                    public void onSwiped(RecyclerView.ViewHolder viewHolder, int swipeDir) {
-                        input.remove(viewHolder.getAdapterPosition());
-                        mAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
-                    }
-                };
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
-        itemTouchHelper.attachToRecyclerView(recyclerView);*/
     }
 
     // Add Fragments to Tabs
@@ -93,12 +75,18 @@ public class MainActivity extends AppCompatActivity {
         Adapter adapter = new Adapter(getSupportFragmentManager());
         ListContentFragHome fragHome = new ListContentFragHome();
         fragHome.setArguments(data);
-        /*adapter.addFragment(new ListContentFragHome(), "List");
-        adapter.addFragment(new ListContentFragStats(), "Description");
-        adapter.addFragment(new ListContentFragAbout(), "about");*/
+        ListContentFragStats fragStats = new ListContentFragStats();
+        fragStats.setArguments(data);
+        ListContentFragAbout fragAbout = new ListContentFragAbout();
+        fragAbout.setArguments(data);
 
         adapter.addFragment(fragHome,"list");
         viewPager.setAdapter(adapter);
+        /*adapter.addFragment(fragStats,"Stats");
+        viewPager.setAdapter(adapter);*/
+        adapter.addFragment(fragAbout,"About");
+        viewPager.setAdapter(adapter);
+
     }
 
     public void afficheA(){
@@ -150,11 +138,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -173,18 +158,5 @@ public class MainActivity extends AppCompatActivity {
         datafromA = input;
         afficheA();
 
-        /*recyclerView.setHasFixedSize(true);
-        layoutManager = new GridLayoutManager(this, 2);
-     //   recyclerView.setLayoutManager(layoutManager);
-        mAdapter = new MyAdapter(input, new MyAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(AllSport item) {
-                Intent intent = new Intent(MainActivity.this, Description.class);
-                intent.putExtra("nom",item.getStrSport());
-                intent.putExtra("description", item.getStrSportDescription());
-                MainActivity.this.startActivity(intent);
-            }
-        });*/
-        //recyclerView.setAdapter(mAdapter);
     }
 }

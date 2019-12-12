@@ -49,23 +49,21 @@ public class ListContentFragHome extends Fragment {
         return view;
     }
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView txtHeader;
         public TextView txtFooter;
         public View layout;
 
-        public ViewHolder(LayoutInflater inflater, ViewGroup parent) {
-            super(inflater.inflate(R.layout.row_layout, parent, false));
+        public ViewHolder(View v) {
+            super(v);
+            txtHeader = (TextView) v.findViewById(R.id.firstLine);
+            txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
-
-
 
     }
 
         public class ContentAdapter extends RecyclerView.Adapter<ViewHolder> {
-            // Set numbers of List in RecyclerView.
             Context context;
             List<AllSport> datafromA;
 
@@ -77,8 +75,13 @@ public class ListContentFragHome extends Fragment {
 
             @Override
             public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-                return new ViewHolder(LayoutInflater.from(parent.getContext()), parent);
-            }
+                LayoutInflater inflater = LayoutInflater.from(
+                        parent.getContext());
+                View v =
+                        inflater.inflate(R.layout.row_layout, parent, false);
+
+                ViewHolder vh = new ViewHolder(v);
+                return vh;            }
 
             @Override
             public void onBindViewHolder(ViewHolder holder, final int position) {
