@@ -1,6 +1,7 @@
 package com.example.chxbinapp.View;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,10 +20,15 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 
 public class ListContentFragHome extends Fragment {
     List<AllSport> dataFromA;
+    private SwipeRefreshLayout swipeRefresh;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
 
     @Override
@@ -98,5 +104,21 @@ public class ListContentFragHome extends Fragment {
                 return datafromA.size();
             }
         }
+
+    public void showListe(List<AllSport> input) {
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
+        mAdapter = new MyAdapter(input, new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(AllSport item) {
+                Intent intent;
+                intent = new Intent(ListContentFragHome.this.getActivity(), Description.class);
+                intent.putExtra("nom",item.getStrSport());
+                intent.putExtra("description", item.getStrSportDescription());
+                ListContentFragHome.this.startActivity(intent);
+            }
+        });
+        recyclerView.setAdapter(mAdapter);
+    }
     }
 
