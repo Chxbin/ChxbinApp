@@ -7,13 +7,11 @@ Simple projet démontrant l'utilisation d'une architecture, dans une application
 Cette application affiche tous les plus grands sports avec l'utilisation d'une API.
 
 # Consignes respectées :
-        - Deux écrans : Un écran avec une liste et un écran avec un détail de l’item.
+        - Utilisation de Fragment
         - Appel WebService à une API Rest.
-        - Affichage d'une liste dans un RecyclerView
-        - Fonctions supplémentaires :
-            * Architecture (MVC ou MVP ou MVVM)
-            * Gitflow
-            * SwipeRefresh
+        - Git
+        - Architecture MVC
+        - Design
 
             
 # Fonctionnalités :
@@ -26,9 +24,17 @@ Splash affichant un résumé des principaux sports présent dans cette applicati
 
 # Deuxième écran
 
-Affiche la liste des sports
+Affichage des trois Fragments ( Tips - List - About ) 
 
 ![image](https://user-images.githubusercontent.com/46956121/54956562-8c387900-4f50-11e9-8826-fc4d4a07028b.png)
+
+Le premier fragment donne des informations sur les sports les plus populaires au monde.
+
+
+Le deuxième fragment affiche la liste de tous les sports
+
+
+Le troisème fragment explique en une phrase en quoi consiste se projet
 
 
 # Troisième écran
