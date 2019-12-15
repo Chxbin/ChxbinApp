@@ -30,11 +30,15 @@ Affichage des trois Fragments ( Tips - List - About )
 
 Le premier fragment donne des informations sur les sports les plus populaires au monde.
 
+<img width="288" alt="Top10" src="https://user-images.githubusercontent.com/46956121/70868258-32189180-1f7f-11ea-8f8a-420c82cc5931.png">
 
 Le deuxième fragment affiche la liste de tous les sports
 
+<img width="289" alt="List" src="https://user-images.githubusercontent.com/46956121/70868219-cf26fa80-1f7e-11ea-9b97-012d208bd3e3.png">
 
 Le troisème fragment explique en une phrase en quoi consiste se projet
+
+<img width="289" alt="About" src="https://user-images.githubusercontent.com/46956121/70868264-465c8e80-1f7f-11ea-9018-18e20074a897.png">
 
 
 # Troisième écran
