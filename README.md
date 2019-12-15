@@ -26,8 +26,6 @@ Splash affichant un résumé des principaux sports présent dans cette applicati
 
 Affichage des trois Fragments ( Tips - List - About ) 
 
-![image](https://user-images.githubusercontent.com/46956121/54956562-8c387900-4f50-11e9-8826-fc4d4a07028b.png)
-
 Le premier fragment donne des informations sur les sports les plus populaires au monde.
 
 <img width="288" alt="Top10" src="https://user-images.githubusercontent.com/46956121/70868258-32189180-1f7f-11ea-8f8a-420c82cc5931.png">
