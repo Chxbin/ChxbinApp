@@ -83,7 +83,7 @@ public class ListContentFragHome extends Fragment {
         public ContentAdapter(Context context, List<AllSport> input, OnItemClickListener listener) {
             this.datafromA = input;
             Resources resources = context.getResources();
-            this.listener = this.listener;
+            this.listener = listener;
         }
 
         @Override
